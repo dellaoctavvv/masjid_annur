@@ -60,7 +60,7 @@ class UstadzController extends Controller
     {
         try {
           $req = $request->all();
-          $uuid = Uuid::uuid1();
+        //   $uuid = Uuid::uuid1();
             // menyimpan data file yang diupload ke variabel $file
             $file = $request->file('foto');
 
@@ -71,7 +71,6 @@ class UstadzController extends Controller
             $file->move($tujuan_upload,$nama_file);
 
           Ustadz::create([
-            'id' => $uuid,
             'id_ustadz' => $req['id_ustadz'],
             'nama' => $req['nama'],
             'tgl_lahir' => $req['tgl'],
@@ -160,6 +159,16 @@ class UstadzController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            Ustadz::findOrFail($id)->delete();
+            return redirect()
+                ->route('ustadz.index')
+                ->with('success', 'Data berhasil dihapus.');
+
+          } catch(\Illuminate\Database\Eloquent\ModelNotFoundException $e){
+            return redirect()
+                ->route('ustadz.index')
+                ->with('error', 'Data tidak ditemukan.');
+          }
     }
 }

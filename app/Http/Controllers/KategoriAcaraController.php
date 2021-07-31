@@ -60,10 +60,9 @@ class KategoriAcaraController extends Controller
     {
         try {
             $req = $request->all();
-            $uuid = Uuid::uuid1();
+            // $uuid = Uuid::uuid1();
 
             KategoriAcara::create([
-              'id' => $uuid,
               'id_kategori' => $req['id_kategori'],
               'nama_kategori' => $req['nama_kategori'],
             ]);

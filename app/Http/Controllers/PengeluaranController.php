@@ -44,10 +44,9 @@ class PengeluaranController extends Controller
     {
         try {
             $req = $request->all();
-            $uuid = Uuid::uuid1();
+            // $uuid = Uuid::uuid1();
 
             Transaksi::create([
-              'id' => $uuid,
               'tanggal' => $req['tanggal'],
               'keterangan' => $req['keterangan'],
               'kredit' => $req['kredit'],

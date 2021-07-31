@@ -61,10 +61,9 @@ class KatsumController extends Controller
     {
         try {
             $req = $request->all();
-            $uuid = Uuid::uuid1();
+            // $uuid = Uuid::uuid1();
 
             Katsum::create([
-              'id' => $uuid,
               'id_katsum' => $req['id_katsum'],
               'nama_katsum' => $req['nama_katsum'],
             ]);

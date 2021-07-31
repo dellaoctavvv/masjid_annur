@@ -66,7 +66,8 @@
                                         <td class="text-center">
                                             <button type="button" onclick="editForm({{$data}})" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></button>
                                             <button type="button" onclick="detailForm({{$data}})" class="btn btn-warning btn-circle"><i class="fa fa-eye"></i></button>
-                                            <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></button>
+                                            <!-- <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-trash"></i></button> -->
+                                            <a href="{{ route('ustadz.destroy',$data) }}" onclick="event.preventDefault();destroy('{{ route('ustadz.destroy',$data) }}');" class="btn btn-danger btn-circle" title="Hapus"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -226,14 +227,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Edit Ustadz</h4>
+                <h4 class="modal-title" id="myModalLabel">Detail Ustadz</h4>
                 <button type="button" class="close" data-dismiss="modal"
                     aria-hidden="true">×</button>
             </div>
             <div class="modal-body">
                 <form id="detailForm" method="POST" enctype="multipart/form-data">
                     <h6>Id Ustadz</h6>
-                    <input readonly type="text" class="form-control" name="id_ustadz1" id="id_ustadz" required><br>
+                    <input readonly type="text" class="form-control" name="id_ustadz1" id="id_ustadz1" required><br>
                     
                     <h6>Nama</h6>
                     <input type="text" class="form-control" readonly name="nama" id="nama1" placeholder="Masukan Nama" required><br>
@@ -252,27 +253,21 @@
 
                     <h6>No HP</h6>
                     <input type="number" class="form-control" readonly name="no_hp" id="no_hp1" placeholder="Masukan No Telpon" required><br>
-
-                    <h6>Foto</h6>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Upload</span>
-                        </div>
-                        <div class="custom-file">
-                            <input type="file" readonly name="foto" class="custom-file-input" id="inputGroupFile01">
-                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                        </div>
-                    </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger"
                             data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </form>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal update -->
+
+<!-- hapus -->
+<form id="destroy-form" method="POST">
+    @method('DELETE')
+    @csrf
+</form>
 @endsection
 
 @push('style-asset')
@@ -294,15 +289,31 @@
             $('#ModalEdit').modal();
         }
         function detailForm(data) {
-            console.log(data);
+            console.log(data.id_ustadz);
             $('#id_ustadz1').attr('value',data.id_ustadz);
             $('#nama1').attr('value',data.nama);
-            $('#tgl2').attr('value',data.tgl_lahir);
-            $('#alamat3').html(data.alamat);
-            $('#no_hp4').attr('value',data.no_telpon);
-            $('#jk5').val(data.jenis_k);
+            $('#tgl1').attr('value',data.tgl_lahir);
+            $('#alamat1').html(data.alamat);
+            $('#no_hp1').attr('value',data.no_telpon);
+            $('#jk1').val(data.jenis_k);
             $('#detailForm').attr('action',"{{url('ustadz')}}/"+data.id);
             $('#ModalDetail').modal();
+        }
+
+        function destroy(action){
+            swal({
+                title: 'Apakah anda yakin?',
+                text: 'Setelah dihapus, Anda tidak akan dapat mengembalikan data ini!',
+                icon: 'warning',
+                buttons: ["Cancel", "Yes!"],
+            }).then(function(value) {
+                if (value) {
+                document.getElementById('destroy-form').setAttribute('action', action);
+                document.getElementById('destroy-form').submit();
+                }else {
+                swal("Data kamu aman!");
+            }
+            });
         }
     </script>
     <script src="{{asset('assets/assets/extra-libs/datatables.net/js/jquery.dataTables.min.js')}}"></script>

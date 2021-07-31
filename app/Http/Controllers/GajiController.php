@@ -60,10 +60,9 @@ class GajiController extends Controller
     {
         try {
             $req = $request->all();
-            $uuid = Uuid::uuid1();
+            // $uuid = Uuid::uuid1();
 
             Gaji::create([
-              'id' => $uuid,
               'id_gaji' => $req['id_gaji'],
               'jabatan' => $req['jabatan'],
               'nominal' => $req['nominal'],

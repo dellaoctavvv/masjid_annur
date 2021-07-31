@@ -47,10 +47,9 @@ class PemasukanController extends Controller
     {
         try {
             $req = $request->all();
-            $uuid = Uuid::uuid1();
+            // $uuid = Uuid::uuid1();
 
             Transaksi::create([
-              'id' => $uuid,
               'id_katsum' => $req['id_katsum'],
               'penyumbang' => $req['penyumbang'],
               'tanggal' => $req['tanggal'],

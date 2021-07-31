@@ -48,10 +48,9 @@ class AcaraController extends Controller
     {
         try {
             $req = $request->all();
-            $uuid = Uuid::uuid1();
+            // $uuid = Uuid::uuid1();
 
             Acara::create([
-              'id' => $uuid,
               'nama_acara' => $req['nama_acara'],
               'id_kategori' => $req['id_kategori'],
               'tanggal' => $req['tanggal'],

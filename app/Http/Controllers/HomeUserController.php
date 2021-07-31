@@ -69,10 +69,9 @@ class HomeUserController extends Controller
     {
         try {
             $req = $request->all();
-            $uuid = Uuid::uuid1();
+            // $uuid = Uuid::uuid1();
 
             Saran::create([
-              'id' => $uuid,
               'nama' => $req['nama'],
               'email' => $req['email'],
               'subjek' => $req['subjek'],

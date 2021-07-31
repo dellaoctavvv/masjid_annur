@@ -62,7 +62,7 @@ class AnggotaController extends Controller
     {
         try{
             $req = $request->all();
-            $uuid = Uuid::uuid1();
+            // $uuid = Uuid::uuid1();
          // menyimpan data file yang diupload ke variabel $file
             $file = $request->file('foto');
 
@@ -73,7 +73,6 @@ class AnggotaController extends Controller
             $file->move($tujuan_upload,$nama_file);
 
          Anggota::create([
-            'id' => $uuid,
             'id_dkm' => $req['id_dkm'],
             'nama' => $req['nama'],
             'jenis_kelamin' => $req['jk'],
