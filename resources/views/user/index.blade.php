@@ -71,6 +71,59 @@
         </div>
       </div>
     </section>
+    <section class="ftco-section ftco-no-pb">
+      <div class="container">
+      	<div class="row justify-content-center">
+          <div class="col-md-12 heading-section text-center ftco-animate mb-5">
+          	<span class="subheading">Foto Masjid</span>
+            <h2 class="mb-2">Galeri Masjid Agung An-Nur Pekanbaru</h2>
+          </div>
+        </div>
+        <div class="row d-flex">
+          <div class="col-md-12 heading-section text-center ftco-animate mb-5">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="{{asset('carousel/1.jpeg')}}">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="{{asset('carousel/2.jpeg')}}">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="{{asset('carousel/3.jpeg')}}">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="{{asset('carousel/4.jpeg')}}">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="{{asset('carousel/5.jpeg')}}">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="{{asset('carousel/6.jpeg')}}">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="{{asset('carousel/7.jpeg')}}">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="{{asset('carousel/8.jpeg')}}">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="{{asset('carousel/9.jpeg')}}">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
      <section class="ftco-section ftco-agent">
       <div class="container">

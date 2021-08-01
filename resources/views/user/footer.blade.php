@@ -5,7 +5,7 @@
             <div class="ftco-footer-widget mb-4">
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">Jl. Hangtuah, Sumahilang, Pekanbaru Kota, Kota Pekanbaru, Riau 28156/<span></li>
+	                <li><span class="icon icon-map-marker"></span><span class="text">Jl. Hangtuah, Sumahilang, Pekanbaru Kota, Kota Pekanbaru, Riau 28156<span></li>
 	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+62 392 3929 210</span></a></li>
 	                <li><a href="#"><span class="icon icon-envelope pr-4"></span><span class="text">rayaannur@gmail.com</span></a></li>
 	              </ul>
